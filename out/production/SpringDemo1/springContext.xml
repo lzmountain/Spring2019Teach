@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="banana" class="com.nj.chinasofti.Banana">
+        <property name="name" value="泰国香蕉"/>
+    </bean>
+
+    <bean id="apple" class="com.nj.chinasofti.Apple">
+        <property name="name" value="富士苹果"/>
+    </bean>
+
+    <bean id="durian" class="com.nj.chinasofti.Durian">
+        <property name="name" value="泰国榴莲"/>
+    </bean>
+    <bean id="fruitStore" class="com.nj.chinasofti.FruitStore">
+        <property name="fruit" ref="durian"/>
+    </bean>
+</beans>

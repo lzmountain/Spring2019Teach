@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+    <bean id="udisk" class="com.nj.chinasofti.UDisk">
+        <property name="volumeLabel" value="Harry的U盘"/>
+    </bean>
+    <bean id="portableHD" class="com.nj.chinasofti.PortableHD">
+        <property name="volumeLabel" value="Harry的移动硬盘"/>
+    </bean>
+
+    <bean id="os" class="com.nj.chinasofti.OperationSystem">
+        <property name="usbStorage" ref="portableHD"/>
+    </bean>
+
+    <bean id="initAndDestroy" class="com.nj.chinasofti.initdestroy.InitAndDestroy"
+        p:value="这是一个测试Bean"
+        init-method="init"
+        destroy-method="destroy">
+    </bean>
+
+</beans>
